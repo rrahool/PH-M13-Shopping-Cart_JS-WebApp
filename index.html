@@ -25,11 +25,12 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="top-minus-btn" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="phone-quantity" type="text" class="form-control text-center" value="1">
+                           <button id="top-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <input type="hidden" id="single-phone-price" value="1219">
+                        <h5>$<span id="phone-price">1,219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,12 +44,13 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="bottom-minus-btn" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="case-quantity" type="text" class="form-control text-center" value="1">
+                           <button id="bottom-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <input type="hidden" id="single-case-price" value="59">
+                        <h5>$ <span id="case-price">59</span> </h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,9 +66,10 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <input type="hidden" id="single-sub-total" value="1278">
+                        <h5>$<span id="sub-total">1,278</span></h5>
+                        <h5>$<span id="tax">0</span> </h5>
+                        <h5>$<span id="total">1,278</span></h5>
                      </div>
                   </div>
                </div>
@@ -78,5 +81,259 @@
       </div>
    </section>
 </body>
+
+<script>
+
+   /*------------------------------------*/
+   /* Top Plus Button event handler starts*/
+
+   const topPlusBtn = document.getElementById("top-plus-btn");
+   topPlusBtn.addEventListener("click", function(){
+      // getting the value from phone quantity input box and converting the string into number
+      let phoneQty = document.getElementById("phone-quantity").value;
+      // phoneQty = phoneQty.replace(/\,/g, '');
+      let phoneQtyNumber = parseFloat(phoneQty);
+
+      // increasing phone quantity value on each click
+      phoneQtyNumber = phoneQtyNumber + 1;
+      
+      // putting the updated value to phone quantity input box
+      document.getElementById("phone-quantity").value = phoneQtyNumber;
+
+
+
+      /* Phone Price Updating start*/
+
+      // getting the value of single phone price from hidden input box  
+      let phonePrice = document.getElementById("single-phone-price").value;
+
+      
+      // converting the string into number & multiplying phone price number with phone quantity number
+      const phonePriceNumber = parseFloat(phonePrice) * phoneQtyNumber;
+
+      document.getElementById("phone-price").innerText = phonePriceNumber;
+
+      /* Phone Price Updating ends*/
+
+
+
+      /* Case Price Updating start*/
+
+      // getting the innerText from case price span 
+      let casePrice = document.getElementById("case-price").innerText;
+      casePrice = casePrice.replace(/\,/g, '');
+      let casePriceNumber = parseInt(casePrice, 10);
+
+
+      // adding phone price number with case price number
+      subTotalNumber = phonePriceNumber + casePriceNumber;
+
+      document.getElementById("sub-total").innerText = subTotalNumber;
+      
+      /* Sub Total Price Updating ends*/
+
+
+
+      /* Total Price Updating start*/
+
+      totalNumber = subTotalNumber;
+
+      document.getElementById("total").innerText = totalNumber;
+      
+      /* Total Price Updating ends*/
+   });
+   /* Top Plus Button event handler ends*/
+  
+
+      /* Top Minus Button event handler starts*/
+
+      const topMinusBtn = document.getElementById("top-minus-btn");
+      topMinusBtn.addEventListener("click", function(){
+      // getting the value from phone quantity input box and converting the string into number
+      let phoneQty = document.getElementById("phone-quantity").value;
+      // phoneQty = phoneQty.replace(/\,/g, '');
+      let phoneQtyNumber = parseFloat(phoneQty);
+
+      // decreasing phone quantity value on each click
+      phoneQtyNumber = phoneQtyNumber - 1;
+      
+      // putting the updated value to phone quantity input box
+      document.getElementById("phone-quantity").value = phoneQtyNumber;
+
+
+
+      /* Phone Price Updating start*/
+
+      // getting the value of single phone price from hidden input box  
+      let phonePrice = document.getElementById("single-phone-price").value;
+         
+      // converting the string into number & multiplying phone price number with phone quantity number
+      const phonePriceNumber = parseFloat(phonePrice) * phoneQtyNumber;
+
+      document.getElementById("phone-price").innerText = phonePriceNumber;
+
+      /* Phone Price Updating ends*/
+
+
+
+      /* Case Price Updating start*/
+
+      // getting the innerText from case price span 
+      let casePrice = document.getElementById("case-price").innerText;
+      casePrice = casePrice.replace(/\,/g, '');
+      let casePriceNumber = parseInt(casePrice, 10);
+
+
+      // adding phone price number with case price number
+      subTotalNumber = phonePriceNumber + casePriceNumber;
+
+      document.getElementById("sub-total").innerText = subTotalNumber;
+      
+      /* Sub Total Price Updating ends*/
+
+
+
+      /* Total Price Updating start*/
+
+      totalNumber = subTotalNumber;
+
+      document.getElementById("total").innerText = totalNumber;
+      
+      /* Total Price Updating ends*/
+   });
+   /* Top Minus Button event handler ends*/
+   /*------------------------------------*/
+
+
+
+   /*------------------------------------*/
+   /* Bottom Plus Button event handler starts*/
+
+   const bottomPlusBtn = document.getElementById("bottom-plus-btn");
+   bottomPlusBtn.addEventListener("click", function(){
+      // getting the value from case quantity input box and converting the string into number
+      let caseQty = document.getElementById("case-quantity").value;
+      let caseQtyNumber = parseFloat(caseQty);
+
+      // increasing phone quantity value on each click
+      caseQtyNumber = caseQtyNumber + 1;
+      
+      // putting the updated value to case quantity input box
+      document.getElementById("case-quantity").value = caseQtyNumber;
+
+
+
+      /* Case Price Updating start*/
+
+      // getting the value of single case price from hidden input box  
+      let casePrice = document.getElementById("single-case-price").value;
+
+      
+      // converting the string into number & multiplying phone price number with phone quantity number
+      const casePriceNumber = parseFloat(casePrice) * caseQtyNumber;
+
+      document.getElementById("case-price").innerText = casePriceNumber; 
+
+      /* Phone Price Updating ends*/
+
+
+
+      /* Case Price Updating start*/
+
+      // getting the innerText from phone price span 
+      let phonePrice = document.getElementById("phone-price").innerText;
+      phonePrice = phonePrice.replace(/\,/g, '');
+      let phonePriceNumber = parseInt(phonePrice, 10);
+
+
+      // adding phone price number with case price number
+      subTotalNumber = casePriceNumber + phonePriceNumber;
+
+      document.getElementById("sub-total").innerText = subTotalNumber;
+      
+      /* Sub Total Price Updating ends*/
+
+
+
+      /* Total Price Updating start*/
+
+      totalNumber = subTotalNumber;
+
+      document.getElementById("total").innerText = totalNumber;
+      
+      /* Total Price Updating ends*/
+   });
+
+   /* Bottom Plus Button event handler ends*/
+
+   /* Bottom Minus Button event handler starts*/
+
+   const bottomMinusBtn = document.getElementById("bottom-minus-btn");
+   bottomMinusBtn.addEventListener("click", function(){
+      // getting the value from case quantity input box and converting the string into number
+      let caseQty = document.getElementById("case-quantity").value;
+      // phoneQty = phoneQty.replace(/\,/g, '');
+      let caseQtyNumber = parseFloat(caseQty);
+
+      // decreasing phone quantity value on each click
+      caseQtyNumber = caseQtyNumber - 1;
+      
+      // putting the updated value to case quantity input box
+      document.getElementById("case-quantity").value = caseQtyNumber;
+
+
+
+      /* Case Price Updating start*/
+
+      // getting the value of single case price from hidden input box  
+      let casePrice = document.getElementById("single-case-price").value;
+
+      
+      // converting the string into number & multiplying phone price number with phone quantity number
+      const casePriceNumber = parseFloat(casePrice) * caseQtyNumber;
+
+      document.getElementById("case-price").innerText = casePriceNumber; 
+
+      /* Phone Price Updating ends*/
+
+
+
+      /* Case Price Updating start*/
+
+      // getting the innerText from phone price span 
+      let phonePrice = document.getElementById("phone-price").innerText;
+      phonePrice = phonePrice.replace(/\,/g, '');
+      let phonePriceNumber = parseInt(phonePrice, 10);
+
+
+      // adding phone price number with case price number
+      subTotalNumber = casePriceNumber + phonePriceNumber;
+
+      document.getElementById("sub-total").innerText = subTotalNumber;
+      
+      /* Sub Total Price Updating ends*/
+
+
+
+      /* Total Price Updating start*/
+
+      totalNumber = subTotalNumber;
+
+      document.getElementById("total").innerText = totalNumber;
+      
+      /* Total Price Updating ends*/
+   });
+
+   /* Bottom Minus Button event handler ends*/
+   /*------------------------------------*/
+   
+
+
+
+
+</script>
+
+
+
 
 </html>
