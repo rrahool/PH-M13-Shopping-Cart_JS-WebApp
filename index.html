@@ -89,58 +89,16 @@
 
    const topPlusBtn = document.getElementById("top-plus-btn");
    topPlusBtn.addEventListener("click", function(){
-      // getting the value from phone quantity input box and converting the string into number
-      let phoneQty = document.getElementById("phone-quantity").value;
-      // phoneQty = phoneQty.replace(/\,/g, '');
-      let phoneQtyNumber = parseFloat(phoneQty);
-
-      // increasing phone quantity value on each click
-      phoneQtyNumber = phoneQtyNumber + 1;
       
-      // putting the updated value to phone quantity input box
-      document.getElementById("phone-quantity").value = phoneQtyNumber;
+      // Phone Quantity Increment Function
+      phoneQtyInc("phone-quantity");
 
+      // Phone Price Update Function
+      updatePhonePrice("single-phone-price", "phone-quantity", "phone-price");
 
-
-      /* Phone Price Updating start*/
-
-      // getting the value of single phone price from hidden input box  
-      let phonePrice = document.getElementById("single-phone-price").value;
-
+      // Total Price Update Function
+      updateTotalPrice("case-price", "sub-total", "total");
       
-      // converting the string into number & multiplying phone price number with phone quantity number
-      const phonePriceNumber = parseFloat(phonePrice) * phoneQtyNumber;
-
-      document.getElementById("phone-price").innerText = phonePriceNumber;
-
-      /* Phone Price Updating ends*/
-
-
-
-      /* Case Price Updating start*/
-
-      // getting the innerText from case price span 
-      let casePrice = document.getElementById("case-price").innerText;
-      casePrice = casePrice.replace(/\,/g, '');
-      let casePriceNumber = parseInt(casePrice, 10);
-
-
-      // adding phone price number with case price number
-      subTotalNumber = phonePriceNumber + casePriceNumber;
-
-      document.getElementById("sub-total").innerText = subTotalNumber;
-      
-      /* Sub Total Price Updating ends*/
-
-
-
-      /* Total Price Updating start*/
-
-      totalNumber = subTotalNumber;
-
-      document.getElementById("total").innerText = totalNumber;
-      
-      /* Total Price Updating ends*/
    });
    /* Top Plus Button event handler ends*/
   
@@ -326,6 +284,64 @@
 
    /* Bottom Minus Button event handler ends*/
    /*------------------------------------*/
+
+   function phoneQtyInc(q_id){
+      // getting the value from phone quantity input box and converting the string into number
+      let phoneQty = document.getElementById(q_id).value;
+      // phoneQty = phoneQty.replace(/\,/g, '');
+      let phoneQtyNumber = parseFloat(phoneQty);
+
+      // increasing phone quantity value on each click
+      phoneQtyNumber = phoneQtyNumber + 1;
+      
+      // putting the updated value to phone quantity input box
+      document.getElementById(q_id).value = phoneQtyNumber;
+       
+      return phoneQtyNumber;
+   }
+
+   function updatePhonePrice(s_id, q_id, id){
+      // getting the value of single phone price from hidden input box  
+      let phonePrice = document.getElementById(s_id).value;
+
+      let phoneQtyNumber = document.getElementById(q_id).value;
+
+      // converting the string into number & multiplying phone price number with phone quantity number
+      const phonePriceNumber = parseFloat(phonePrice) * phoneQtyNumber;
+
+      document.getElementById(id).innerText = phonePriceNumber;
+
+      return phonePriceNumber;
+   }
+
+   function updateTotalPrice(c_id, sub_t_id, t_id){
+      /* Case Price Updating start*/
+
+      // getting the innerText from case price span 
+      let casePrice = document.getElementById(c_id).innerText;
+      casePrice = casePrice.replace(/\,/g, '');
+      let casePriceNumber = parseInt(casePrice, 10);
+
+      /* Case Price Updating ends*/
+
+      /* Sub Total Price Updating starts*/
+
+      // adding phone price number with case price number
+      subTotalNumber = updatePhonePrice("single-phone-price", "phone-quantity", "phone-price") + casePriceNumber;
+
+      document.getElementById(sub_t_id).innerText = subTotalNumber;
+      
+      /* Sub Total Price Updating ends*/
+
+
+      /* Total Price Updating start*/
+
+      totalNumber = subTotalNumber;
+
+      document.getElementById(t_id).innerText = totalNumber;
+      
+      /* Total Price Updating ends*/
+   }
    
 
 
