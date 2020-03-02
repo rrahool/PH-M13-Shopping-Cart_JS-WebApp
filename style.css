@@ -5,6 +5,8 @@ body{
 	margin: 100px 0;
 	background-color: #F6F5FA;;
 	padding: 60px 0;
+	border-radius: 20px;
+	box-shadow: 5px 5px 20px #3f3e3e;
 }
 .total-price{
 	padding-bottom: 15px;
@@ -14,6 +16,7 @@ body{
 	border-radius: 10px;
 	padding: 15px 20px;
 	margin-bottom: 20px;
+	box-shadow: 5px 5px 10px gray;
 }
 .center-item{
     display: flex;
@@ -52,4 +55,53 @@ body{
 	font-size: 19px;
 	background-color: #2FBE70;
 	border: none;
+}
+
+.shadow-bg{
+	border-radius: 20px;
+	box-shadow: 5px 5px 20px #3f3e3e;
+}
+#subscribe{
+	height: 300px;
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#subscribe h6{
+    color: gray;
+}
+#btn-gapped{
+    margin-top: 10px;
+}
+
+.slight-gap{
+    margin-bottom: 100px;
+}
+
+.follow-me {
+    text-align: center;
+}
+.follow-me h1{
+    font-size: 30px;
+    margin: 0;
+    margin-top: 20px;
+}
+.social-icon img {
+    width: 110px;
+    height: 110px;
+    padding: 20px;
+}
+.social-icon img:hover{
+    height: 130px;
+    width: 130px;
+    transition: 0.3s;
+}
+
+footer p {
+    text-align: center;
+	padding-top: 100px;
+	padding-bottom: 30px;
+	font-size: 20px;
+	font-weight: 500;
 }

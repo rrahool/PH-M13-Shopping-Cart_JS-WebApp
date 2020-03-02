@@ -1,355 +1,261 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-   <title>Shopping Cart</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-   <link href="style.css" rel="stylesheet">
-</head>
+   <head>
+      <title>Shopping Cart</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+      <link href="style.css" rel="stylesheet">
+   </head>
 
-<body>
+   <body>
 
-   <section>
-      <div class="container">
-         <div class="cart">
-            <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item">
-                        <img src="images/product-1.png" alt="">
-                        <h5>iPhone 11 128GB Black</h5>
-                     </div>
-
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button id="top-minus-btn" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="phone-quantity" type="text" class="form-control text-center" value="1">
-                           <button id="top-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
+      <section>
+         <div class="container">
+            <div class="cart">
+               <div class="col-md-12 col-lg-10 mx-auto">
+                  <div class="cart-item">
+                     <div class="row">
+                        <div class="col-md-7 center-item">
+                           <img src="images/product-1.png" alt="">
+                           <h5>iPhone 11 128GB Black</h5>
                         </div>
-                        <input type="hidden" id="single-phone-price" value="1219">
-                        <h5>$<span id="phone-price">1,219</span></h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
-                     </div>
-                  </div>
-               </div>
 
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item mx-auto">
-                        <img src="images/product-2.png" alt="">
-                        <h5>iPhone 11 Silicone Case - Black</h5>
-                     </div>
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button id="bottom-minus-btn" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="case-quantity" type="text" class="form-control text-center" value="1">
-                           <button id="bottom-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
-
+                        <div class="col-md-5 center-item">
+                           <div class="input-group number-spinner">
+                              <button id="top-minus-btn" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                              <input id="phone-quantity" type="text" class="form-control text-center" value="1">
+                              <button id="top-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           </div>
+                           <input type="hidden" id="single-phone-price" value="1219">
+                           <h5>$<span id="phone-price">1,219</span></h5>
+                           <img src="images/remove.png" alt="" class="remove-item">
                         </div>
-                        <input type="hidden" id="single-case-price" value="59">
-                        <h5>$ <span id="case-price">59</span> </h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
-               </div>
 
-               <div class="cart-item">
-                  <div class="row">
+                  <div class="cart-item">
+                     <div class="row">
+                        <div class="col-md-7 center-item mx-auto">
+                           <img src="images/product-2.png" alt="">
+                           <h5>iPhone 11 Silicone Case - Black</h5>
+                        </div>
+                        <div class="col-md-5 center-item">
+                           <div class="input-group number-spinner">
+                              <button id="bottom-minus-btn" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                              <input id="case-quantity" type="text" class="form-control text-center" value="1">
+                              <button id="bottom-plus-btn" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
-                     <div class="col-md-8">
-                        <h5>Subtotal: </h5>
-                        <h5>Tax:</h5>
-                        <h5>Total:</h5>
-                     </div>
-
-                     <div class="col-md-4 status">
-                        <input type="hidden" id="single-sub-total" value="1278">
-                        <h5>$<span id="sub-total">1,278</span></h5>
-                        <h5>$<span id="tax">0</span> </h5>
-                        <h5>$<span id="total">1,278</span></h5>
+                           </div>
+                           <input type="hidden" id="single-case-price" value="59">
+                           <h5>$ <span id="case-price">59</span> </h5>
+                           <img src="images/remove.png" alt="" class="remove-item">
+                        </div>
                      </div>
                   </div>
-               </div>
-               <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+
+                  <div class="cart-item">
+                     <div class="row">
+
+                        <div class="col-md-8">
+                           <h5>Subtotal: </h5>
+                           <h5>Tax:</h5>
+                           <h5>Total:</h5>
+                        </div>
+
+                        <div class="col-md-4 status">
+                           <input type="hidden" id="single-sub-total" value="1278">
+                           <h5>$<span id="sub-total">1,278</span></h5>
+                           <h5>$<span id="tax">0</span> </h5>
+                           <h5>$<span id="total">1,278</span></h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-12 pt-4 pb-4">
+                     <button type="button" class="btn btn-success check-out ">Check Out</button>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
-   </section>
-</body>
 
-<script>
+         <!-- Email Newsletter starts-->
+         <div class="container shadow-bg slight-gap" id="subscribe">
+            <!-- flex considers div's inside elements as single child -->
+            <div>
+               <h3>Weekly JS Project Newsletter</h3>
+               <h6>Subscribe your email</h6>
+               <input class="form-control border border-dark" type="text" name="" id="">
+               <button class="buy-now-button btn btn-primary btn-lg active" id="btn-gapped">Subscribe</button>
+            </div>
+         </div>
+         <!-- Email Newsletter ends-->
+         <!-- Social Icon Section starts -->
+         <div class="follow-me">
+            <h1>Follow me</h1>
+            <div class="social-icon">
+               <a target="_blank" href="https://www.facebook.com/rbiswas.0807"><img src="images/social/facebook.png" alt=""></a>
+               <a target="_blank" href="https://github.com/rrahool"><img src="images/social/github.png" alt=""></a>
+               <a target="_blank" href="https://www.linkedin.com/in/rahul-biswas/"><img src="images/social/linkedin.png" alt=""></a>
+               <a target="_blank" href="https://twitter.com/raymonparker"><img src="images/social/twitter.png" alt=""></a>
+            </div>
+        </div>
+         <!-- Social Icon Section ends -->
+      </section>
+      <footer>
+         <p>© Rahul Biswas 2020, all rights reserved.</p>
+      </footer>
+   </body>
 
-   /*------------------------------------*/
-   /* Top Plus Button event handler starts*/
+   <script>
 
-   const topPlusBtn = document.getElementById("top-plus-btn");
-   topPlusBtn.addEventListener("click", function(){
-      
-      // Phone Quantity Increment Function
-      phoneQtyInc("phone-quantity");
+      /*------------------------------------*/
+      /* Top Plus Button event handler starts*/
 
-      // Phone Price Update Function
-      updatePhonePrice("single-phone-price", "phone-quantity", "phone-price");
+      const topPlusBtn = document.getElementById("top-plus-btn");
+      topPlusBtn.addEventListener("click", function(){
+         
+         // Phone Quantity Increment
+         qtyIncDec("phone-quantity", topPlusBtn);
 
-      // Total Price Update Function
-      updateTotalPrice("case-price", "sub-total", "total");
-      
-   });
-   /* Top Plus Button event handler ends*/
-  
+         // Phone Price Update Function
+         updatePrice("single-phone-price", "phone-quantity", "phone-price");
+
+         // Total Price Update Function
+         updateTotalPrice("case-price", "sub-total", "total");
+         
+      });
+      /* Top Plus Button event handler ends*/
 
       /* Top Minus Button event handler starts*/
 
       const topMinusBtn = document.getElementById("top-minus-btn");
       topMinusBtn.addEventListener("click", function(){
-      // getting the value from phone quantity input box and converting the string into number
-      let phoneQty = document.getElementById("phone-quantity").value;
-      // phoneQty = phoneQty.replace(/\,/g, '');
-      let phoneQtyNumber = parseFloat(phoneQty);
+         // Phone Quantity Decrement
+         qtyIncDec("phone-quantity", topMinusBtn);
 
-      // decreasing phone quantity value on each click
-      phoneQtyNumber = phoneQtyNumber - 1;
-      
-      // putting the updated value to phone quantity input box
-      document.getElementById("phone-quantity").value = phoneQtyNumber;
+         // Phone Price Update Function
+         updatePrice("single-phone-price", "phone-quantity", "phone-price");
 
+         // Total Price Update Function
+         updateTotalPrice("case-price", "sub-total", "total");
+      });
+      /* Top Minus Button event handler ends*/
+      /*------------------------------------*/
 
+      /*------------------------------------*/
+      /* Bottom Plus Button event handler starts*/
 
-      /* Phone Price Updating start*/
+      const bottomPlusBtn = document.getElementById("bottom-plus-btn");
+      bottomPlusBtn.addEventListener("click", function(){
+         // Case Quantity Increment
+         qtyIncDec("case-quantity", bottomPlusBtn);
 
-      // getting the value of single phone price from hidden input box  
-      let phonePrice = document.getElementById("single-phone-price").value;
+         // Case Price Update Function
+         updatePrice("single-case-price", "case-quantity", "case-price");
+
+         // Total Price Update Function
+         updateTotalPrice("phone-price", "sub-total", "total");
+      });
+
+      /* Bottom Plus Button event handler ends*/
+
+      /* Bottom Minus Button event handler starts*/
+
+      const bottomMinusBtn = document.getElementById("bottom-minus-btn");
+      bottomMinusBtn.addEventListener("click", function(){
+         // Case Quantity Decrement
+         qtyIncDec("case-quantity", bottomMinusBtn);
+
+         // Case Price Update Function
+         updatePrice("single-case-price", "case-quantity", "case-price");
+
+         // Total Price Update Function
+         updateTotalPrice("phone-price", "sub-total", "total");
+      });
+
+      /* Bottom Minus Button event handler ends*/
+      /*------------------------------------*/
+
+      /*------------------------------------*/
+      /* Quantity Increase-Decrease Function starts*/
+
+      function qtyIncDec(q_id, btn){
+         // getting the value from phone/case quantity input box and converting the string into number
+         let qty = document.getElementById(q_id).value;
+         let qtyNumber = parseFloat(qty);
+
+         // increasing/decreasing quantity value on each click
+         if(btn == topPlusBtn || btn == bottomPlusBtn){
+            qtyNumber = qtyNumber + 1;
+         } else if(btn == topMinusBtn || btn == bottomMinusBtn){
+            qtyNumber = qtyNumber - 1;
+         }
          
-      // converting the string into number & multiplying phone price number with phone quantity number
-      const phonePriceNumber = parseFloat(phonePrice) * phoneQtyNumber;
+         // putting the updated value to phone/case quantity input box
+         document.getElementById(q_id).value = qtyNumber;
+         
+         return qtyNumber;
+      }
 
-      document.getElementById("phone-price").innerText = phonePriceNumber;
+      /* Quantity Increase-Decrease Function ends*/
+      /*------------------------------------*/
 
-      /* Phone Price Updating ends*/
+      /*------------------------------------*/
+      /*Price Update Function starts*/
 
+      function updatePrice(s_id, q_id, id){
+         // getting the value of single phone/case price from hidden input box  
+         let price = document.getElementById(s_id).value;
+         let qtyNumber = document.getElementById(q_id).value;
 
+         // converting the string into number & multiplying phone price number with phone quantity number
+         const priceNumber = price * qtyNumber;
 
-      /* Case Price Updating start*/
+         document.getElementById(id).innerText = priceNumber;
 
-      // getting the innerText from case price span 
-      let casePrice = document.getElementById("case-price").innerText;
-      casePrice = casePrice.replace(/\,/g, '');
-      let casePriceNumber = parseInt(casePrice, 10);
+         return priceNumber;
+      }
 
+      /*Price Update Function ends*/
+      /*------------------------------------*/
 
-      // adding phone price number with case price number
-      subTotalNumber = phonePriceNumber + casePriceNumber;
+      /*------------------------------------*/
+      /*  Total Price Update Function starts*/
 
-      document.getElementById("sub-total").innerText = subTotalNumber;
-      
-      /* Sub Total Price Updating ends*/
+      function updateTotalPrice(price_id, sub_t_id, t_id){
 
+         // getting the innerText from phone/case price span 
+         let phonePrice = document.getElementById(price_id).innerText;
+         let casePrice = document.getElementById(price_id).innerText;
 
+         // eliminating the punctuation character using regex
+         phonePrice = phonePrice.replace(/\,/g, '');
+         casePrice = casePrice.replace(/\,/g, '');
 
-      /* Total Price Updating start*/
+         // converting the string into number
+         let phonePriceNumber = parseInt(phonePrice, 10);
+         let casePriceNumber = parseInt(casePrice, 10);
 
-      totalNumber = subTotalNumber;
+         /* Sub Total Price Updating starts*/
 
-      document.getElementById("total").innerText = totalNumber;
-      
+         // adding phone price number with case price number
+         subTotalNumber = updatePrice("single-phone-price", "phone-quantity", "phone-price") + updatePrice("single-case-price", "case-quantity", "case-price");
+
+         document.getElementById(sub_t_id).innerText = subTotalNumber;
+         
+         /* Sub Total Price Updating ends*/
+
+         /* Total Price Updating starts*/
+
+         totalNumber = subTotalNumber;
+         document.getElementById(t_id).innerText = totalNumber;
+      }
+
       /* Total Price Updating ends*/
-   });
-   /* Top Minus Button event handler ends*/
-   /*------------------------------------*/
-
-
-
-   /*------------------------------------*/
-   /* Bottom Plus Button event handler starts*/
-
-   const bottomPlusBtn = document.getElementById("bottom-plus-btn");
-   bottomPlusBtn.addEventListener("click", function(){
-      // getting the value from case quantity input box and converting the string into number
-      let caseQty = document.getElementById("case-quantity").value;
-      let caseQtyNumber = parseFloat(caseQty);
-
-      // increasing phone quantity value on each click
-      caseQtyNumber = caseQtyNumber + 1;
+      /*------------------------------------*/
       
-      // putting the updated value to case quantity input box
-      document.getElementById("case-quantity").value = caseQtyNumber;
-
-
-
-      /* Case Price Updating start*/
-
-      // getting the value of single case price from hidden input box  
-      let casePrice = document.getElementById("single-case-price").value;
-
-      
-      // converting the string into number & multiplying phone price number with phone quantity number
-      const casePriceNumber = parseFloat(casePrice) * caseQtyNumber;
-
-      document.getElementById("case-price").innerText = casePriceNumber; 
-
-      /* Phone Price Updating ends*/
-
-
-
-      /* Case Price Updating start*/
-
-      // getting the innerText from phone price span 
-      let phonePrice = document.getElementById("phone-price").innerText;
-      phonePrice = phonePrice.replace(/\,/g, '');
-      let phonePriceNumber = parseInt(phonePrice, 10);
-
-
-      // adding phone price number with case price number
-      subTotalNumber = casePriceNumber + phonePriceNumber;
-
-      document.getElementById("sub-total").innerText = subTotalNumber;
-      
-      /* Sub Total Price Updating ends*/
-
-
-
-      /* Total Price Updating start*/
-
-      totalNumber = subTotalNumber;
-
-      document.getElementById("total").innerText = totalNumber;
-      
-      /* Total Price Updating ends*/
-   });
-
-   /* Bottom Plus Button event handler ends*/
-
-   /* Bottom Minus Button event handler starts*/
-
-   const bottomMinusBtn = document.getElementById("bottom-minus-btn");
-   bottomMinusBtn.addEventListener("click", function(){
-      // getting the value from case quantity input box and converting the string into number
-      let caseQty = document.getElementById("case-quantity").value;
-      // phoneQty = phoneQty.replace(/\,/g, '');
-      let caseQtyNumber = parseFloat(caseQty);
-
-      // decreasing phone quantity value on each click
-      caseQtyNumber = caseQtyNumber - 1;
-      
-      // putting the updated value to case quantity input box
-      document.getElementById("case-quantity").value = caseQtyNumber;
-
-
-
-      /* Case Price Updating start*/
-
-      // getting the value of single case price from hidden input box  
-      let casePrice = document.getElementById("single-case-price").value;
-
-      
-      // converting the string into number & multiplying phone price number with phone quantity number
-      const casePriceNumber = parseFloat(casePrice) * caseQtyNumber;
-
-      document.getElementById("case-price").innerText = casePriceNumber; 
-
-      /* Phone Price Updating ends*/
-
-
-
-      /* Case Price Updating start*/
-
-      // getting the innerText from phone price span 
-      let phonePrice = document.getElementById("phone-price").innerText;
-      phonePrice = phonePrice.replace(/\,/g, '');
-      let phonePriceNumber = parseInt(phonePrice, 10);
-
-
-      // adding phone price number with case price number
-      subTotalNumber = casePriceNumber + phonePriceNumber;
-
-      document.getElementById("sub-total").innerText = subTotalNumber;
-      
-      /* Sub Total Price Updating ends*/
-
-
-
-      /* Total Price Updating start*/
-
-      totalNumber = subTotalNumber;
-
-      document.getElementById("total").innerText = totalNumber;
-      
-      /* Total Price Updating ends*/
-   });
-
-   /* Bottom Minus Button event handler ends*/
-   /*------------------------------------*/
-
-   function phoneQtyInc(q_id){
-      // getting the value from phone quantity input box and converting the string into number
-      let phoneQty = document.getElementById(q_id).value;
-      // phoneQty = phoneQty.replace(/\,/g, '');
-      let phoneQtyNumber = parseFloat(phoneQty);
-
-      // increasing phone quantity value on each click
-      phoneQtyNumber = phoneQtyNumber + 1;
-      
-      // putting the updated value to phone quantity input box
-      document.getElementById(q_id).value = phoneQtyNumber;
-       
-      return phoneQtyNumber;
-   }
-
-   function updatePhonePrice(s_id, q_id, id){
-      // getting the value of single phone price from hidden input box  
-      let phonePrice = document.getElementById(s_id).value;
-
-      let phoneQtyNumber = document.getElementById(q_id).value;
-
-      // converting the string into number & multiplying phone price number with phone quantity number
-      const phonePriceNumber = parseFloat(phonePrice) * phoneQtyNumber;
-
-      document.getElementById(id).innerText = phonePriceNumber;
-
-      return phonePriceNumber;
-   }
-
-   function updateTotalPrice(c_id, sub_t_id, t_id){
-      /* Case Price Updating start*/
-
-      // getting the innerText from case price span 
-      let casePrice = document.getElementById(c_id).innerText;
-      casePrice = casePrice.replace(/\,/g, '');
-      let casePriceNumber = parseInt(casePrice, 10);
-
-      /* Case Price Updating ends*/
-
-      /* Sub Total Price Updating starts*/
-
-      // adding phone price number with case price number
-      subTotalNumber = updatePhonePrice("single-phone-price", "phone-quantity", "phone-price") + casePriceNumber;
-
-      document.getElementById(sub_t_id).innerText = subTotalNumber;
-      
-      /* Sub Total Price Updating ends*/
-
-
-      /* Total Price Updating start*/
-
-      totalNumber = subTotalNumber;
-
-      document.getElementById(t_id).innerText = totalNumber;
-      
-      /* Total Price Updating ends*/
-   }
-   
-
-
-
-
-</script>
-
-
-
+   </script>
 
 </html>
